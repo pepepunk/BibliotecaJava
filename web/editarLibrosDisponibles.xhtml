@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Consulta de Biblioteca- ITSOEH</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <link href="css/main.css" rel="stylesheet"/>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+            /* Set black background color, white text and some padding */
+            footer {
+                background-color: #555;
+                color: white;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form rendered="#{loginBean.verificarSesion()}">
+
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="admin.xhtml"><img src="img/itsoeh2.png" style="margin-top: -7px;"/></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <h:form>
+                            <ul class="nav navbar-nav" style="padding-top:20px; padding-left: 30px; ">
+                                <li><a href="editarLibrosDisponibles.xhtml">Editar lista de libros </a></li>
+                                <li><a href="editarTrabajosDigitales.xhtml">Editar investigaciones</a></li>
+                                <li><h:commandButton class="btn btn-default" value="Cerrar Sesión" action="#{loginBean.cerrarSesion()}"/></li>
+                            </ul>
+                        </h:form>
+                    </div>
+                </div>
+            </nav>
+
+            
+                <h:form id="formInsertar" style="padding-top: 90px;">
+                    <p:panelGrid columns="4">
+                        <h:outputText value="Num. Adquisición"/>
+                        <h:inputText value="#{librosBean.libro.setNumAdquisicion(numAdquisicion)}" />
+                        <h:outputText value="Titulo"/>
+                        <h:inputText value="#{librosBean.libro.setTitulo(titulo)}"/>
+                        <h:outputText value="Autor"/>
+                        <h:inputText value="#{librosBean.libro.setAutor(autor)}"/>
+                        <h:outputText value="Sección"/>
+                        <h:inputText value="#{librosBean.libro.setSeccion(seccion)}"/> 
+                    </p:panelGrid>
+                    <h:commandButton action="#{librosBean.insertarLibro()}" value="Guardar Libro"/>
+                </h:form>
+            
+            <div class="container" >
+                <p:panel id="lista" header="Lista de Libros" style="margin-bottom: 20px;">
+                    <h:form id="formMostrar">
+                        <p:dataTable var="libro" value="#{librosBean.libros}" rows="10"
+                                     paginator="true"
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink}
+                                     {PreviousPageLink} {PageLinks}
+                                     {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     rowsPerPageTemplate="5,10,20"
+                                     rendered="true">
+
+                            <p:column headerText="Numero de Adquisición">
+                                <h:outputText value="#{libro.numAdquisicion}"/>
+                            </p:column>
+                            <p:column headerText="Titulo">
+                                <h:outputText value="#{libro.titulo}"/>
+                            </p:column>
+                            <p:column headerText="Autor(es)">
+                                <h:outputText value="#{libro.autor}"/>
+                            </p:column>
+                            <p:column headerText="Sección">
+                                <h:outputText value="#{libro.seccion}"/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <p:commandButton value="Modificar" oncomplete="dlgmodificar.show()" update="formModificar">
+                                    <f:setPropertyActionListener target="#{librosBean.libro}" value="#{libro}"/>
+                                </p:commandButton>
+                            </p:column>
+                            <p:column headerText="Eliminar">
+                                <h:outputText value="#{libro.seccion}"/>
+                            </p:column>
+                            <p:dialog id="dlg" header="Modificar Libro" showEffect="explode" hideEffect="explode"
+                                      widgetVar="dlgmodificar" modal="true" resizable="false" minWidth="220">
+                                <h:form id="formModificar">
+                                    <p:panelGrid columns="1">
+                                        <p:outputLabel value="Titulo"/>
+                                        <p:inputText value="#{librosBean.libro.titulo}"/>
+                                    </p:panelGrid>
+                                    <p:commandButton value="Modificar" action="#{librosBean.editarLibro()}" oncomplete="dlgmodificar.hide();"/>
+                                </h:form>
+                            </p:dialog>
+                        </p:dataTable>
+                    </h:form>
+                </p:panel>
+            </div>  
+        </h:form>
+
+    </h:body>
+    
+        No puedes acceder a esta página
+</html>

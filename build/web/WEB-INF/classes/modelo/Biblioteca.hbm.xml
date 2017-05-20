@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/05/2017 09:53:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Biblioteca" table="biblioteca" catalog="biblioteca" optimistic-lock="version">
+        <id name="idBiblio" type="int">
+            <column name="id_biblio" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreBiblio" type="string">
+            <column name="nombreBiblio" length="40" not-null="true" />
+        </property>
+        <property name="institucion" type="string">
+            <column name="institucion" length="80" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

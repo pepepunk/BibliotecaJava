@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Info. de libro</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+
+            footer {
+                background-color: #555;
+                color: white;
+                padding: 15px;
+                margin-top: 43px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.xhtml"><img src="img/itsoeh2.png" style="margin-top: -7px;"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" style="padding-top:20px; padding-left: 30px; ">
+                        <li><a href="listaLibrosG.xhtml">Lista General de Libros</a></li>
+                        <li><a href="listaLibrosD.xhtml">Lista de Investigaciones Digitales</a></li>
+                        <li><a href="login.xhtml">Inicia sesión como administrador</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-center" style="padding-top: 20px;">
+            <div class="row" style="padding-top: 90px;">
+                <div class="col-sm-11">
+                    <div class="well">
+                        <p style="font-weight: bold; text-align: center; font-size: 30px;">Información del Libro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 well">
+                    <div class="well">
+                        <p>Recuerda que este y todos los libros que estan en esta página los puedes encontrar disponibles en la biblioteca del ITSOEH.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p style="font-weight: bold;">Nombre del libro</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="well">
+                                 <h:outputText style="font-size: 19px; font-weight: bold;" value="#{verInfoTesis.tesis.titulo}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p style="font-weight: bold;">Autor</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="well">
+                                <h:outputText style="font-size: 19px; font-weight: bold;" value="#{verInfoTesis.tesis.autor}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p style="font-weight: bold;">Num. de Adquisición</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="well">
+                                <h:outputText style="font-size: 19px; font-weight: bold;" value="#{verInfoTesis.tesis.numAdquisicion}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p style="font-weight: bold;">Carrera</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="well">
+                                <h:outputText style="font-size: 19px; font-weight: bold;" value="#{verInfoTesis.tesis.carrera}"/>
+                                #{verInfoTesis.tesis=null}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            
+        <footer class="container-fluid text-center">
+            <p>&copy; ITSOEH</p>
+            <p>&copy; Sistemas Computacionales</p>
+        </footer>
+    </h:body>
+</html>
+
+

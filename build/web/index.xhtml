@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Consulta de Biblioteca- ITSOEH</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <link href="css/main.css" rel="stylesheet"/>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+            /* Set black background color, white text and some padding */
+            footer {
+                background-color: #555;
+                color: white;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="img/itsoeh2.png" style="margin-top: -7px;"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" style="padding-top:20px; padding-left: 30px; ">
+                        <li><a href="listaLibrosG.xhtml">Lista General de Libros</a></li>
+                        <li><a href="listaLibrosD.xhtml">Lista de Investigaciones Digitales</a></li>
+                        <li><a href="login.xhtml">Inicia sesión como administrador</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" style="padding-top: 110px;">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+
+                        </ol>
+
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <a href="reglamento.html" target="_blank"><img src="img/reglamento.png" alt="Image"/></a>
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="http://www.itsoeh.edu.mx/" target="_blank"><img src="img/paginaWeb.png" alt="Image"/></a>
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.facebook.com/ITSOEH-P%C3%A1gina-Oficial-142983839177483/" target="_blank"><img src="img/face.jpg" alt="Image"/></a>
+                                <div class="carousel-caption">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="well">
+                        <p><img src="img/lupa2.png"/>Puedes buscar cualquier libro y verificar si esta en la biblioteca haciendo clic en los enlaces de arriba.</p>
+                    </div>
+                    <div class="well">
+                        <p><img src="img/flecha.png"/>Tambien puedes ingresar a la lista general de libros de la biblioteca y consultar los libro digitales.</p>
+                    </div>
+                    <div class="well">
+                        <p>Página creada por: </p>
+                        <p>José Manuel Cerón Castillo</p>
+                        <p>Ricardo Jimenez Micete</p>
+                        <p>Giovanni Rubalcava Fuentes</p>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        <footer class="container-fluid text-center">
+            <p>&copy; ITSOEH</p>
+            <p>&copy; Sistemas Computacionales</p>
+        </footer>
+    </h:body>
+
+</html>
+
+

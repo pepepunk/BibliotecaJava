@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/05/2017 09:53:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Usuarios" table="usuarios" catalog="biblioteca" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" length="100" not-null="true" />
+        </property>
+        <property name="nombreUsuario" type="string">
+            <column name="nombre_usuario" length="30" not-null="true" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="contrasena" length="30" not-null="true" />
+        </property>
+        <property name="preguntaSeguridad" type="string">
+            <column name="preguntaSeguridad" length="150" not-null="true" />
+        </property>
+        <property name="respuestaSeguridad" type="string">
+            <column name="respuestaSeguridad" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
